@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../../database/models');
+const db = require('../database/models');
 const { Association } = require('sequelize');
 const Op = db.Sequelize.Op;
 
@@ -10,7 +10,7 @@ const cancionAPIController = {
         db.Cancion.findAll(
             {
                 include: [
-                    { association: 'albunes' },   
+                    { association: 'album' },   
                     { association: 'genero' },  
                     { association: 'artista' },
                 ]
@@ -37,7 +37,7 @@ const cancionAPIController = {
                 titulo: req.body.titulo,
                 duracion: req.body.duracion,
                 generoId: req.body.generoId,
-                albumId: req.body.albunesId,
+                albumId: req.body.albumId,
                 artistaId: req.body.artistaId,
                 createdAt: req.body.createdAt,
                 updatedAt: req.body.updatedAt,
@@ -90,7 +90,7 @@ const cancionAPIController = {
                 createdAt: req.body.createdAt,
                 updatedAt: req.body.updatedAt,
                 generoId: req.body.generoId,
-                albumId: req.body.albunesId,
+                albumId: req.body.albumId,
                 artistaId: req.body.artistaId
             }, 
             {

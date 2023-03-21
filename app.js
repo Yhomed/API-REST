@@ -8,10 +8,8 @@ const generoAPIRoutes = require('./routes/api/generoAPIRoutes');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use('/cancion', cancionAPIRoutes);
 
-// endpoint predeterminado de api para canciones
-app.use('/canciones', cancionAPIRoutes);
-// endpoint predeterminado de api para generos
-app.use('/generos', generoAPIRoutes);
+app.use('/genero', generoAPIRoutes);
 
-app.listen(process.env.PORT || 3000, () => console.log('ya merito |°°| 3000'));
+app.listen(process.env.PORT || 3000, () => console.log('server activo |°°| 3000'));
