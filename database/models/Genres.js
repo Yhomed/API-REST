@@ -1,8 +1,6 @@
-module.exports = (sequelize, dataTypes) => {
-
-    let alias = "Genre"
-
-    let cols = {
+module.exports = (sequelize, dataTypes) =>{
+    let alias = "genres"
+    let colum ={
         id: {
             autoincremental: true,
             primaryKey: true,
@@ -29,6 +27,6 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return Genre;
+    return Genres;
 
 }

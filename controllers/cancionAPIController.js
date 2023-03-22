@@ -7,13 +7,13 @@ const cancionAPIController = {
 
     list: (req, res) => {
         console.log('Listado de canciones y propiedades');
-        db.Cancion.findAll(
+        db.Song.findAll(
             {
-                include: [
+                /*include: [
                     { association: 'album' },   
-                    { association: 'genero' },  
-                    { association: 'artista' },
-                ]
+                    { association: 'generos' },  
+                    { association: 'artistas' },
+                ]*/
             }
         ).then(canciones => {
             return res.status(200).json({
@@ -32,7 +32,7 @@ const cancionAPIController = {
     },
     create: (req, res) => {
         console.log('Creación de un registro en la tabla canciones');
-        db.Cancion.create(
+        db.Song.create(
             {
                 titulo: req.body.titulo,
                 duracion: req.body.duracion,
@@ -70,7 +70,7 @@ const cancionAPIController = {
     },
     show: (req, res) => {
         console.log('Detalle de una cancion ');
-        db.Cancion.findByPk(req.params.id)
+        db.Song.findByPk(req.params.id)
         .then(cancion => {
             return res.status(200).json({
                 data: cancion,
@@ -83,7 +83,7 @@ const cancionAPIController = {
     update: (req,res) => {
         console.log('Edició de registros');
         let cancionId = req.params.id;
-        db.Cancion.update( 
+        db.Song.update( 
             { 
                 titulo: req.body.titulo,
                 duracion: req.body.duracion,
@@ -125,7 +125,7 @@ const cancionAPIController = {
     destroy: (req,res) => {
         console.log('Destrucción de un registro de la tabla canciones');
         let cancionId = req.params.id;
-        db.Cancion.destroy({where: {id: cancionId}, force: true}) 
+        db.song.destroy({where: {id: cancionId}, force: true}) 
         .then(confirm => {
             let respuesta;
             if(confirm){

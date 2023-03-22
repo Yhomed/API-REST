@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const cancionAPIController = require('../controllers/api/cancionAPIController');
+const cancionAPIController = require('../controllers/cancionAPIController');
 
 router.get('/', cancionAPIController.list);
 

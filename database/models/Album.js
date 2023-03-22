@@ -1,8 +1,6 @@
-module.exports = (sequelize, dataTypes) => { 
-
-    let alias = "Album"
-
-    let cols = {
+module.exports = (sequelize, dataTypes) =>{
+    let alias = "album"
+    let colum ={
         id: {
             autoincremental: true,
             primaryKey: true,

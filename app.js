@@ -3,8 +3,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-const cancionAPIRoutes = require('./routes/api/cancionAPIRoutes');
-const generoAPIRoutes = require('./routes/api/generoAPIRoutes');
+const cancionAPIRoutes = require('./routes/cancionAPIRoutes');
+const generoAPIRoutes = require('./routes/generoAPIRoutes');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
