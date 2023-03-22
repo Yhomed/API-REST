@@ -1,6 +1,4 @@
 
-
-
 module.exports = (sequelize, dataTypes) =>{
     let alias = "Song"
     let colum ={
@@ -37,6 +35,14 @@ module.exports = (sequelize, dataTypes) =>{
     }
 
     const Song = sequelize.define(alias,colum,config)
+
+    Song.associate = function(models) {
+        Song.hasOne(models.Album, {
+            as: 'albumes',
+            foreignKey: 'album_id',
+        })
+       
+        
+    }
     return Song 
 }
-

@@ -6,7 +6,7 @@ const Op = db.Sequelize.Op;
 const generoAPIController = {
     list: (req, res) => {
         console.log('Listado de los generos con sus respectivas propiedades');
-        db.Genero.findAll(
+        db.Genre.findAll(
             {
                 include: [
                     { association: 'canciones' },  

@@ -18,15 +18,10 @@ module.exports = (sequelize, dataTypes) =>{
         underscored: true
     }
 
-    const Genre = sequelize.define(alias, cols, config);
+    const Genre = sequelize.define(alias, colum, config);
 
-    Genre.associate = function(models) {
-        Genre.hasMany(models.Song, {
-            as: 'generos',
-            foreignKey: 'genero_id',
-        })
-    }
+    
 
-    return Genres;
+    return Genre;
 
 }

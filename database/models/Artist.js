@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) =>{
         underscored: true
     }
 
-    const Artist = sequelize.define(alias, cols, config);
+    const Artist = sequelize.define(alias, colum, config);
 
     Artist.associate = function(models) {
         Artist.hasMany(models.Song, {

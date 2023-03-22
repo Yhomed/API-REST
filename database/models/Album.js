@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = "album"
+    let alias = "Album"
     let colum ={
         id: {
             autoincremental: true,
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) =>{
         underscored: true
     }
 
-    const Album = sequelize.define(alias, cols, config);
+    const Album = sequelize.define(alias, colum, config);
 
     Album.associate = function(models) {
         Album.hasMany(models.Song, { 
