@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = "genres"
+    let alias = "Genre"
     let colum ={
         id: {
             autoincremental: true,
@@ -20,6 +20,12 @@ module.exports = (sequelize, dataTypes) =>{
 
     const Genre = sequelize.define(alias, colum, config);
 
+    Genre.associate = function(models) {
+        Genre.hasMany(models.Song, {
+            as: 'canciones',
+            foreignKey: 'genero_id',
+        })
+    }
     
 
     return Genre;

@@ -9,11 +9,11 @@ const cancionAPIController = {
         console.log('Listado de canciones y propiedades');
         db.Song.findAll(
             {
-                include: [
+               /* include: [
                     { association: 'albumes' },   
                     { association: 'generos' },  
                     { association: 'artistas' },
-                ]
+                ]*/
             }
         ).then(canciones => {
             return res.status(200).json({
